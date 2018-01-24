@@ -1,0 +1,12 @@
+全局变量
+
+变量名								说明
+SOURCE_PROBABILITY					信源概率
+SYMBOL								信源符号
+SOURCE_COUNT						信源符号个数
+DICT								用来编码、解码序列的数据字典
+HUFFMANTREE 						霍夫曼码树
+NEXT_STEP_BUTTON_ENTRY_CNT			记录show_next_step_button被调用次数
+ENCODING_MODE						大概率编0还是小概率编0的问题
+
+SOURCE_PROBABILITY SYMBOL SOURCE_COUNT DICT HUFFMANTREE NEXT_STEP_BUTTON_ENTRY_CNT ENCODING_MODE				
