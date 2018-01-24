@@ -659,16 +659,19 @@ if NEXT_STEP_BUTTON_ENTRY_CNT >= (top_level_nodes_count - 1)  % huffman树画完了
     for i = 1:1:top_level_nodes_count
         codes{i} = huffmantree_encode_getcode(HUFFMANTREE, i, ENCODING_MODE);
     end
-    celldisp(codes);    % 调试用
-    % 把码字画到图上
-    for i = 1:1:(top_level_nodes_count)
-        text(-1 ,i, codes{i});
-    end
+    % celldisp(codes);    % 调试用
     
     % 生成用来编码、解码序列的数据字典
     DICT = makeDict(SYMBOL, codes);
-%     disp('已生成字典');
+    % disp('已生成字典');
+    % disp(DICT);    % 调试用
     
+    idxs_sorted_source = HUFFMANTREE{1}(:,2);
+    % 把码字画到图上
+    for i = 1:1:(top_level_nodes_count)
+        text(-1 ,i, codes{idxs_sorted_source(i)});
+    end
+  
     % 信源熵
     H = getSourceEntropy(HUFFMANTREE{1}(:,1), SOURCE_COUNT);
     
